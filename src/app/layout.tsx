@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,52 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
+  )
+}
+
+export function Navbar() {
+  return (
+    <nav className='width-full'>
+      <div className="flex justify-between items-center width-full bg-primary">
+        <div className="flex items-center">
+          <Image alt='' src="/logo.png" width={50} height={50} />
+          <h1 className="text-2xl font-bold ml-2">Peregrin</h1>
+        </div>
+        <div className="flex items-center">
+          <a className="mr-4" href="#">Home</a>
+          <a className="mr-4" href="#">Menu</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+export function Footer() {
+  return (
+    <footer className="bg-secondary text-white px-6 py-4">
+      <div className="flex justify-between items-center container mx-auto">
+        <div>
+          <h3 className="text-lg">Peregrin Restaurant</h3>
+          <p>123 Main St, Anytown, Anystate</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+        <div>
+          <h3 className="text-lg">Hours</h3>
+          <p>Mon-Fri: 9am - 10pm</p>
+          <p>Sat-Sun: 10am - 11pm</p>
+        </div>
+        <div>
+          <h3 className="text-lg">Follow Us</h3>
+          <p>Facebook | Instagram | Twitter</p>
+        </div>
+      </div>
+    </footer>
   )
 }

@@ -7,7 +7,17 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    minHeight: {
+      '3/4': '75vh',
+    },
     extend: {
+      colors: {
+        "background": "#FEE6E8",
+        "primary": "#F9535B",
+        "secondary": "#DECACB",
+        "accent": "#F60915",
+        "text": "#000000",
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
