@@ -31,7 +31,7 @@ export function Navbar() {
     <nav className='width-full'>
       <div className="flex justify-between items-center width-full bg-primary">
         <div className="flex items-center">
-          <Image alt='' src="/logo.png" width={50} height={50} />
+          {/* <Image alt='' src="/logo.png" width={50} height={50} /> */}
           <h1 className="text-2xl font-bold ml-2">Peregrin</h1>
         </div>
         <div className="flex items-center">
