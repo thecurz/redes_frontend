@@ -13,7 +13,7 @@ export default function Comprar({ params }: { params: { id: string } }) {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault()
-        const venta = { nombre, apellido, telefono, direccion, pago }
+        const venta = { nombre, apellido, telefono, direccion, pago, product: id }
 
         const response = await fetch('/api/venta', {
             method: 'POST',

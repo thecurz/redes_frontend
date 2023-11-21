@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import dotenv from "dotenv"
 dotenv.config()
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
-    const { nombre, apellido, telefono, direccion, pago } = req.body;
+    const { nombre, apellido, telefono, direccion, pago, product } = req.body;
     const response = await fetch(`${process.env.BASE_URL}/api/create_receipt/`, {
         method: 'POST',
         body: JSON.stringify({
@@ -10,7 +10,8 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
             apellido,
             telefono,
             direccion,
-            pago
+            pago,
+            product,
         }),
         headers: {
             'Content-Type': 'application/json'
